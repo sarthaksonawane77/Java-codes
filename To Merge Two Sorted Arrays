@@ -1,0 +1,43 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Welcome TO Merging of Two Bootiful Arrays");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("enter size of first Array");
+        int size1 = scanner.nextInt();
+        int[] arr1 = arrayinput(size1, scanner);
+        System.out.println("enter size of second Array");
+        int size2 = scanner.nextInt();
+        int[] arr2 = arrayinput(size2, scanner);
+
+        int[] NewArray= MergeArray(arr1,arr2);
+        System.out.println("New Merged Array Is: ");
+        for(int i =0;i< NewArray.length;i++){
+        System.out.print(NewArray[i]);
+        }
+    }
+    public static int[] arrayinput(int size,Scanner scanner) {
+        int[] arr1=new int[size];
+        for (int i = 0; i < size; i++) {
+            System.out.println("enter element "+ (i+1) +" of array:");
+             arr1[i]= scanner.nextInt();}
+        return arr1;
+        }
+
+    public static int[] MergeArray (int[] arr1,int[] arr2) {
+        int NewSize=arr1.length+arr2.length;
+        int [] NewArray=new int[NewSize];
+       int i=0,j=0,k=0;
+       while(i< arr1.length||j<arr2.length){
+           if(j== arr2.length || (i<arr1.length && arr1[i]<arr2[j])){
+               NewArray[k]=arr1[i];
+               i++;
+               k++;
+            } else {
+               NewArray[k]=arr2[j];
+               j++;
+               k++;
+           }
+       }
+        return NewArray;
+    }}
