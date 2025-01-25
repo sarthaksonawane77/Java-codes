@@ -1,0 +1,51 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("enter size of Array");
+        int size1 = scanner.nextInt();
+        System.out.println("enter size of Array");
+        int size2 = scanner.nextInt();
+
+        int[][] arr1 = arrayinput(size1, size2, scanner);
+        System.out.println("Array is: ");
+        for (int i = 0; i < size1; i++) {
+            for (int j = 0; j < size2; j++) {
+                System.out.print(arr1[i][j]+" ");
+            }
+            System.out.println();
+        }
+
+        System.out.println("Enter the element needed to search");
+        int a = scanner.nextInt();
+        boolean exist= SearchElement(arr1,a,size1,size2);
+        if(exist){
+            System.out.println("Element Exist in The Array");
+        }
+        else{
+            System.out.println("Element Do Not Exist");
+        }
+    }
+
+    public static int[][] arrayinput(int size, int SIZE, Scanner scanner) {
+        int[][] arr1 = new int[size][SIZE];
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                System.out.print("enter element (" + (i+1)+", "+(j+1) + ") of array:");
+                arr1[i][j] = scanner.nextInt();
+            }
+        }
+        return arr1;
+    }
+
+    public static boolean SearchElement(int[][] arr1,int a, int size1,int size2) {
+        for(int i =0;i<size1;i++){
+            for(int j=0;j<size2;j++){
+                if(arr1[i][j]==a){
+                    return true;
+                }
+            }
+        }
+        return false;
+
+    }
