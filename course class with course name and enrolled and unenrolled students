@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+class Course{
+    static int maxCapacity=10;
+    String courseName;
+    int enrollments;
+    String [] enrolledStudents;
+
+    static void setMaxCapacity(int maxCapacity){
+      Course.maxCapacity=maxCapacity;
+    }
+
+     Course(String courseName){
+        this.courseName=courseName;
+        this.enrollments=0;
+        this.enrolledStudents=new String[maxCapacity];
+     }
+    void enrolledStudents(String studentName){
+        enrolledStudents[enrollments]=studentName;
+        enrollments++;
+    }
+
+    void unenrolledStudents(String studentName){
+        boolean found=false;
+        for(int i =0; i<enrollments;i++){
+            if(enrolledStudents[i]!=null&&enrolledStudents[i].equals(studentName)){
+                for(int j=i; j<enrollments-1;j++) {
+                    enrolledStudents[j]=enrolledStudents[j+1];
+                }
+                enrolledStudents[enrollments-1]=null;
+                enrollments--;
+                found=true;
+                System.out.println(studentName+ " has been unenrolled from "+ courseName);
+                break;
+            }
+        }
+        if(!found){
+            System.out.println(studentName+ " is not enrolled in "+courseName);
+        }}
+
+        void displayEnrolledStudents(){
+            System.out.println("All enrolled students: ");
+        for(int i =0;i<enrollments;i++){
+            System.out.println(enrolledStudents[i]);
+        }
+        }
+
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        //declaring object course which is calling class Course
+        Course course=new Course("Java Programming");
+        course.enrolledStudents("Alice");
+        course.enrolledStudents("bub");
+        course.enrolledStudents("gotya");
+
+        course.displayEnrolledStudents();
+        System.out.println("enter student name needed to be unenrolled");
+        String studentName=scanner.nextLine();
+        course.unenrolledStudents(studentName);
+
+        course.displayEnrolledStudents();
+    }
+
+}
