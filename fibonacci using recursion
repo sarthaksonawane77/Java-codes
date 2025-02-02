@@ -1,0 +1,21 @@
+public class Main {
+     public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+         int next=0;
+         System.out.println("enter the number");
+         int limit = scanner.nextInt();
+         System.out.println("The fibonacci series upto "+ limit + " is ");
+         System.out.println(0);
+         System.out.println(1);
+         int fib = fibonacci(limit,0,1);
+
+     }
+
+     public static int fibonacci(int limit,int a,int b) {
+         int next=a+b;
+         if(next>limit){
+             return 0;}
+         System.out.println(next);
+        return fibonacci(limit,b,next);
+     }
+ }
