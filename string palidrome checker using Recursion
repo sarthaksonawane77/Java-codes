@@ -1,0 +1,23 @@
+public class Main {
+     public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+         System.out.println("Welcome to Palindrome checker");
+         System.out.println("enter the String");
+         String a = scanner.nextLine();
+         System.out.println("The given string is "+ (isPalindrome(a)?"Palindrome":"Not Palindrome"));
+         boolean palindrome  = isPalindrome(a);
+
+     }
+
+     public static Boolean isPalindrome(String a) {
+         if (a.length()<=1){
+             return true;
+         }
+        int lastPosition=a.length()-1;
+        if(a.charAt(0)!=a.charAt(lastPosition)){
+            return false;
+        }
+        String newString=a.substring(1,lastPosition);
+        return isPalindrome(newString);
+     }
+ }
