@@ -1,0 +1,31 @@
+import java.lang.*;
+ class student {
+
+        String studentName;
+        int studentId;
+        int studentClass;
+        String studentAddress;
+
+        public student (String studentName,int studentId,int studentClass,String studentAddress){
+        this.studentName=studentName;
+        this.studentAddress=studentAddress;
+        this.studentClass=studentClass;
+        this.studentId=studentId;
+    }
+
+     @Override
+     public String toString() {
+            return "student details:{name:"+ 
+                    studentName+", address: "+
+                    studentAddress+", class: "+
+                    studentClass+", id: "+
+                    studentId+"}";
+       }
+
+     public static void main(String[] args) {
+         student stu = new student("sarthak",9191,16,"India");
+         System.out.println(stu);
+     }
+
+
+ }
