@@ -1,0 +1,30 @@
+public class Dice {
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("Enter array size");
+        int size=scanner.nextInt();
+        scanner.nextLine();
+
+
+        String[] arr= fillArray(size,scanner);  // Assign the returned array
+        
+       // for(int i =0;i<size;i++){
+        // StringBuilder sentence= new StringBuilder();
+           // System.out.print(sentence+" ");
+        //}
+        
+        StringBuilder sentence= new StringBuilder();
+        for (String str : arr) {
+            sentence.append(str).append(" ");
+        }
+        System.out.println(sentence);
+    }
+    public static String[] fillArray(int size,Scanner scanner) {
+        String[] arr = new String[size];
+        for (int i = 0; i < size; i++) {
+            System.out.println("enter element number " + (i + 1));
+            arr[i]= scanner.nextLine();
+        }
+        return arr;
+    }
+    }
