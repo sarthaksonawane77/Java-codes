@@ -1,0 +1,30 @@
+public class Dice {
+    static int roll(){
+        return (int)Math.ceil(Math.random()*100);
+    }
+
+    static int guess(int Num, Scanner scanner){
+        while(true){
+            int num=scanner.nextInt();
+            if(num==Num){
+            return 1;
+        }
+        else if(num<Num){
+                System.out.println("Guess Higher Number");
+        }
+        else {
+                System.out.println("Guess Lower Number");
+        }
+    }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int Num=roll();
+        System.out.println("Guess The Number: ");
+        int a=guess(Num,scanner);
+        if(a==1) {
+            System.out.println("Congrats, You guessed the correct number");
+        }
+    }
+    }
