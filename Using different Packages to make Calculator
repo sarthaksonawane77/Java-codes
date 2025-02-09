@@ -1,0 +1,32 @@
+package geometry;
+public class circle {
+    public double radius;
+    public circle(int radius){
+        this.radius=radius;
+    }
+}
+
+package geometry;
+public class rectangle {
+    public int length;
+    public int breadth;
+    public rectangle(int length,int breadth){
+        this.length=length;
+        this.breadth=breadth;
+    }
+}
+
+
+package utils;
+import geometry.circle;
+import geometry.rectangle;
+public class Calculator {
+    public static void main(String[] args) {
+        circle cir=new circle(10);
+        rectangle rect =new rectangle(10,5);
+        double cirArea=Math.PI*Math.pow(cir.radius,2);
+        double rectArea=rect.length* rect.breadth;
+        System.out.println("area of circle"+cirArea);
+        System.out.println("area of rectangle"+rectArea);
+    }
+}
