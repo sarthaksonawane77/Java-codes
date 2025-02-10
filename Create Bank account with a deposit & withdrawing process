@@ -1,0 +1,39 @@
+class bankAccount {
+    private int accountNumber;
+    private String accountHolderName;
+    private int balance;
+    //constructor
+    public bankAccount(int accountNumber,String accountHolderName,int balance){
+        this.accountNumber=accountNumber;
+        this.accountHolderName=accountHolderName;
+        this.balance=balance;
+    }
+
+    public void depositMoney(int amount){;
+        balance+=amount;
+    }
+
+    public int withDrawMoney(int amount){
+        if(amount<balance+1000&&amount>0){
+            System.out.println("Withdrawal successful");
+            balance-=amount;
+        }
+        else{
+            System.out.println("Not enough balance");
+            amount=balance;
+            balance=0;
+        }
+        return amount;
+    }
+}
+**************new class***************
+
+public class Customer {
+    public static void main(String[] args) {
+        bankAccount account =new bankAccount(123,"Sarthak",5000);
+        account.depositMoney(1000);
+        System.out.println(account.withDrawMoney(250));
+        account.withDrawMoney(-100);
+        account.depositMoney(-100);
+    }
+}
