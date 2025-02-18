@@ -1,0 +1,33 @@
+public abstract class shape {
+public abstract double calculateArea();
+}
+*****new class*****
+    public class circle extends shape{
+       private final int radius;
+       public circle(int radius){
+              this.radius=radius;
+       }
+       public double calculateArea(){
+              return Math.PI*Math.pow(radius,2);
+       }
+
+}
+      *****new class*****
+        public class square extends shape{
+    private final int side;
+    public square(int side){
+        this.side=side;
+    }
+    public double calculateArea(){
+        return Math.pow(side,2);
+    }
+}
+          *****new class*****
+            public class Area {
+    public static void main(String[] args) {
+        circle radius = new circle(5);
+        square side= new square(5);
+        System.out.println(radius.calculateArea());
+        System.out.println(side.calculateArea());
+    }
+}
