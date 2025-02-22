@@ -1,0 +1,29 @@
+public class ExceptionHandling {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("enter file name");
+        String fileName = scanner.nextLine();
+        try (FileWriter writer = new FileWriter(fileName)) {
+            writer.write("This is the firest file I have ever created using java...");
+            writer.flush();
+            System.out.println("file written successfully...");
+        } catch (IOException e) {
+            System.out.println("exception occurred " + e.getMessage());
+        }
+
+        System.out.println("enter the file name that you want to open...");
+        String filename = scanner.nextLine();
+            try (FileReader fr = new FileReader(filename)) {
+                int read = 0;
+                do {
+                    read = fr.read();
+                    System.out.print((char) read);
+                }
+                while (read != -1);
+            } catch (FileNotFoundException e ) {
+                System.out.println("file not found "+ e.getMessage());
+            } catch (IOException e) {
+                System.out.println("incorrect input" + e.getMessage());
+            }
+        }
+    }
