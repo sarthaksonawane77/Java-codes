@@ -1,0 +1,13 @@
+public class People {
+    public static void main(String[] args) {
+        System.out.println(concatenateList("Sarthak", "Sonawane,","GATE-2026,","AIR-70"));
+        System.out.println(concatenateList("Congrats","Brother"));
+    }
+    public static String concatenateList(String... str){
+        StringBuilder sb = new StringBuilder();
+        for (String strings:str ){
+            sb.append(strings).append(" ");
+        }
+        return sb.toString();
+    }
+}
